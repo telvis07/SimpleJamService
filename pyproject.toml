@@ -5,7 +5,11 @@ description = "A simple MIDI jam service"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "mido",
+    "mido>=1.3.2",
+    "pydantic>=2.7.1",
+    "environs>=14.3.0",
+    "pygame>=2.6.0",
+#    "rtmidi>=1.5.8",
 ]
 
 
@@ -28,3 +32,6 @@ ignore = ["E741"]
 
 [project.scripts]
 simplejam = "simplejam.main:main"
+diatonic_demo = "simplejam.commands.diatonic_chords_demo:run"
+chord_progression_demo = "simplejam.commands.chord_progression_demo:run"
+play_midi_file = "simplejam.midi.player:run"
