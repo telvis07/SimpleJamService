@@ -1,0 +1,7 @@
+env
+*.pyc
+__pycache__/
+*.pyo
+.idea/
+output/
+.python-version

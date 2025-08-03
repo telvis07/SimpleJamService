@@ -1,0 +1,30 @@
+[project]
+name = "simplejam"
+version = "0.1.0"
+description = "A simple MIDI jam service"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mido",
+]
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "pytest",
+    "black",
+    "flake8",
+    "ruff",
+    "mypy",
+]
+
+[tool.ruff.lint]
+# E741 Ambiguous variable name: `I`
+ignore = ["E741"]
+
+[project.scripts]
+simplejam = "simplejam.main:main"
