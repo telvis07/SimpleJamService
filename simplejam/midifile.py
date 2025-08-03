@@ -1,4 +1,5 @@
 """Classes to generate MIDI files"""
+
 import mido
 from mido import MidiFile, MidiTrack, MetaMessage
 import os
