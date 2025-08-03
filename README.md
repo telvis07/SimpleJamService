@@ -1,1 +1,1 @@
-g
+Generate MIDI files for guitar practice using Python.
