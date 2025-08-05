@@ -59,12 +59,3 @@ def run() -> None:
         print(f"Finished playing: {input_file}")
     except (FileNotFoundError, RuntimeError) as e:
         print(f"Error: {e}")
-
-
-if __name__ == "__main__":
-    args = parse_args()
-    try:
-        play_midi_file__pygame(args.file_path)
-        print(f"Finished playing: {args.file_path}")
-    except (FileNotFoundError, RuntimeError) as e:
-        print(f"Error: {e}")

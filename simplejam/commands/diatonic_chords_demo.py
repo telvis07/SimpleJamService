@@ -29,7 +29,3 @@ def run() -> None:
         time_signature=TimeSignature(4, 4),
     )
     print("Generated chords file")
-
-
-if __name__ == "__main__":
-    run()

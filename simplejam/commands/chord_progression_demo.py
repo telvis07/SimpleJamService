@@ -24,8 +24,3 @@ def run() -> None:
     generate_midi_file_from_chord_sequence(
         output_file=output_file, chord_sequence=chord_sequences
     )
-
-
-if __name__ == "__main__":
-    run()
-    print("Generated chord progression demo MIDI file.")
