@@ -14,7 +14,7 @@ def run() -> None:
             "/Users/telviscalhoun/work/SimpleJamService/output",
             "c_major.mid",
         ),
-        chord_sequence=C_major.DiatonicTriads.values(),
+        chord_sequence=list(C_major.DiatonicTriads.values()),
         tempo=60,
         time_signature=TimeSignature(4, 4),
     )

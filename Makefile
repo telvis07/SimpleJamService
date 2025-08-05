@@ -18,6 +18,7 @@ fmt:
 
 lint:
 	uv run ruff check simplejam/
+	uv run mypy simplejam/
 
 test:
 	uv run coverage run -m pytest tests/

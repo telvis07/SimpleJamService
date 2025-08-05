@@ -1,11 +1,12 @@
 from simplejam.midi.keys import C_major
 from simplejam.midi.keys import D_major
 from simplejam.schemas import KeyChordProgression
+from typing import Any, List
 
 
 def generate_number_chord_sequence(
     progressions: list[KeyChordProgression],
-) -> list[list]:
+) -> List[Any]:
     """Generate sequences of chords for a list of KeyChordProgression objects.
 
     Example input:

@@ -9,7 +9,6 @@ dependencies = [
     "pydantic>=2.7.1",
     "environs>=14.3.0",
     "pygame>=2.6.0",
-#    "rtmidi>=1.5.8",
 ]
 
 
@@ -30,6 +29,10 @@ dev-dependencies = [
 [tool.ruff.lint]
 # E741 Ambiguous variable name: `I`
 ignore = ["E741"]
+
+[[tool.mypy.overrides]]
+module = "mido"
+ignore_missing_imports = true
 
 [project.scripts]
 simplejam = "simplejam.main:main"

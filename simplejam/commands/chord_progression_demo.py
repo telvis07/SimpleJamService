@@ -1,7 +1,7 @@
 """Chord progression demo for generating MIDI files with number chord sequences."""
 
-from simplejam.midi.logic import generate_number_chord_sequence
 from simplejam.midi.midifile import generate_midi_file_from_chord_sequence
+from simplejam.midi.logic.generators import generate_number_chord_sequence
 from simplejam.schemas import KeyChordProgression
 from simplejam import config
 import os

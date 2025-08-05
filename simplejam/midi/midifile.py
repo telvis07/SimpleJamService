@@ -1,5 +1,6 @@
 """Classes to generate MIDI files"""
 
+from typing import List, Any
 import mido
 from mido import MidiFile, MidiTrack, MetaMessage, Message
 import os
@@ -8,32 +9,32 @@ import os
 class TimeSignature:
     """Class to represent a time signature."""
 
-    def __init__(self, numerator=4, denominator=4):
+    def __init__(self, numerator: int = 4, denominator: int = 4) -> None:
         self.numerator = numerator
         self.denominator = denominator
 
         if denominator not in [2, 4, 8, 16]:
             raise ValueError("Note value must be one of: 2, 4, 8, or 16.")
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.numerator}/{self.denominator}"
 
 
 class SingleTrackMidiFile:
     """Class to generate MIDI files."""
 
-    def __init__(self, output_file):
+    def __init__(self, output_file: str) -> None:
         self.output_file = output_file
         self.mid = MidiFile()
         self.track = MidiTrack()
         self.mid.tracks.append(self.track)
 
-    def set_tempo(self, bpm=60):
+    def set_tempo(self, bpm: int = 60) -> None:
         """Set the tempo for the MIDI file."""
         tempo = mido.bpm2tempo(bpm)
         self.track.append(MetaMessage("set_tempo", tempo=tempo, time=0))
 
-    def set_time_signature(self, time_signature: TimeSignature):
+    def set_time_signature(self, time_signature: TimeSignature) -> None:
         """Set the time signature for the MIDI file."""
 
         self.track.append(
@@ -45,7 +46,7 @@ class SingleTrackMidiFile:
             )
         )
 
-    def save(self):
+    def save(self) -> None:
         """Save the MIDI file."""
         if os.path.exists(self.output_file):
             print(f"File {self.output_file} already exists. Removing it.")
@@ -57,10 +58,10 @@ class SingleTrackMidiFile:
 
 def generate_midi_file_from_chord_sequence(
     output_file: str,
-    chord_sequence: list,
+    chord_sequence: List[Any],
     tempo: int = 60,
     time_signature: TimeSignature = TimeSignature(4, 4),
-):
+) -> None:
     """Create an example file with each chord from CModes."""
     fg = SingleTrackMidiFile(output_file)
     fg.set_tempo(tempo)

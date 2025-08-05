@@ -3,8 +3,6 @@ import time
 import os
 import argparse
 
-# import rtmidi
-
 
 def play_midi_file__pygame(filepath: str, wait_for_completion: bool = True) -> None:
     """
