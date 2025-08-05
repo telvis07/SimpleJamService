@@ -22,7 +22,7 @@ class TimeSignature:
 class SingleTrackMidiFile:
     """Class to generate MIDI files."""
 
-    def __init__(self, output_file="output.mid"):
+    def __init__(self, output_file):
         self.output_file = output_file
         self.mid = MidiFile()
         self.track = MidiTrack()
@@ -55,7 +55,7 @@ class SingleTrackMidiFile:
         self.mid.save(self.output_file)
 
 
-def generate_example_chords_file(
+def generate_midi_file_from_chord_sequence(
     output_file: str,
     chord_sequence: list,
     tempo: int = 60,

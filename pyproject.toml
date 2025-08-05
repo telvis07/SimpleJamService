@@ -24,6 +24,7 @@ dev-dependencies = [
     "flake8",
     "ruff",
     "mypy",
+    "coverage"
 ]
 
 [tool.ruff.lint]

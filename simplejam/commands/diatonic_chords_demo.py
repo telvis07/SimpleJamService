@@ -2,11 +2,14 @@
 
 import os
 from simplejam.midi.keys import C_major, D_major
-from simplejam.midi.midifile import TimeSignature, generate_example_chords_file
+from simplejam.midi.midifile import (
+    TimeSignature,
+    generate_midi_file_from_chord_sequence,
+)
 
 
 def run() -> None:
-    generate_example_chords_file(
+    generate_midi_file_from_chord_sequence(
         os.path.join(
             "/Users/telviscalhoun/work/SimpleJamService/output",
             "c_major.mid",
@@ -16,7 +19,7 @@ def run() -> None:
         time_signature=TimeSignature(4, 4),
     )
 
-    generate_example_chords_file(
+    generate_midi_file_from_chord_sequence(
         os.path.join(
             "/Users/telviscalhoun/work/SimpleJamService/output",
             "d_major.mid",

@@ -1,4 +1,4 @@
-.PHONY: env clean
+.PHONY: env clean fmt lint test
 
 clean:
 	rm -rf .venv
@@ -18,3 +18,7 @@ fmt:
 
 lint:
 	uv run ruff check simplejam/
+
+test:
+	uv run coverage run -m pytest tests/
+	uv run coverage report --show-missing
